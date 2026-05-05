@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Humera Noor — AI/ML Engineer</title>
+<!-- Andrew Ng's site uses Georgia/serif for headers and clean sans-serif for body -->
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --purple-50: #f5f3ff;
+  --purple-100: #ede9fe;
+  --purple-200: #ddd6fe;
+  --purple-300: #c4b5fd;
+  --purple-400: #a78bfa;
+  --purple-500: #8b5cf6;
+  --purple-600: #7c3aed;
+  --purple-700: #6d28d9;
+  --purple-800: #5b21b6;
+  --purple-900: #4c1d95;
+  --white: #ffffff;
+  --off-white: #fafafa;
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-700: #374151;
+  --gray-900: #111827;
+  --ink: #1e1b2e;
+  --rule: #e8e4f0;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Source Sans 3', 'Helvetica Neue', Arial, sans-serif;
+  background: var(--white);
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── NAVIGATION ── */
+nav {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 60px; height: 64px;
+  border-bottom: 1px solid var(--rule);
+  position: sticky; top: 0;
+  background: rgba(255,255,255,0.97);
+  backdrop-filter: blur(10px);
+  z-index: 200;
+}
+.nav-logo {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 17px; font-weight: 600;
+  color: var(--purple-800); text-decoration: none;
+  letter-spacing: -0.01em;
+}
+.nav-links { display: flex; gap: 2.4rem; list-style: none; }
+.nav-links a {
+  font-size: 14px; color: var(--gray-500);
+  text-decoration: none; font-weight: 400;
+  transition: color .15s;
+}
+.nav-links a:hover { color: var(--purple-700); }
+.nav-cta {
+  font-size: 13.5px; padding: 8px 20px;
+  background: var(--purple-700); color: #fff;
+  border-radius: 4px; text-decoration: none;
+  font-weight: 600; transition: background .15s;
+  letter-spacing: 0.01em;
+}
+.nav-cta:hover { background: var(--purple-800); }
+
+/* ── HERO ── */
+.hero {
+  max-width: 980px; margin: 0 auto;
+  padding: 80px 60px 72px;
+  display: grid; grid-template-columns: 200px 1fr;
+  gap: 64px; align-items: start;
+}
+.avatar-col { display: flex; flex-direction: column; gap: 28px; }
+.avatar-box {
+  width: 180px; height: 220px; border-radius: 6px;
+  background: linear-gradient(160deg, var(--purple-100) 0%, var(--purple-200) 100%);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  border: 2px solid var(--purple-200);
+}
+.avatar-initials {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 40px; font-weight: 600;
+  color: var(--purple-700); letter-spacing: 4px;
+}
+.avatar-tag {
+  font-size: 11px; color: var(--purple-500);
+  margin-top: 8px; font-weight: 500;
+  letter-spacing: 0.08em; text-transform: uppercase;
+}
+.social-links { display: flex; flex-direction: column; gap: 9px; }
+.slink {
+  font-size: 12.5px; color: var(--gray-500);
+  text-decoration: none; display: flex; align-items: center; gap: 7px;
+  transition: color .15s;
+}
+.slink:hover { color: var(--purple-600); }
+.sdot {
+  width: 4px; height: 4px; border-radius: 50%;
+  background: var(--purple-300); flex-shrink: 0;
+}
+
+.hero-body { padding-top: 4px; }
+.eyebrow {
+  font-size: 11px; font-weight: 700; color: var(--purple-600);
+  letter-spacing: 0.14em; text-transform: uppercase;
+  margin-bottom: 18px; display: flex; align-items: center; gap: 12px;
+}
+.eyebrow::after {
+  content: ''; display: block; width: 36px; height: 1px;
+  background: var(--purple-300);
+}
+.hero-body h1 {
+  font-family: 'Lora', Georgia, serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 600; color: var(--ink);
+  line-height: 1.1; letter-spacing: -0.02em;
+  margin-bottom: 22px;
+}
+.hero-body h1 em { font-style: italic; color: var(--purple-700); }
+.hero-bio {
+  font-size: 15.5px; color: var(--gray-500);
+  line-height: 1.85; max-width: 520px; font-weight: 400;
+}
+.hero-bio + .hero-bio { margin-top: 14px; }
+.hero-bio a { color: var(--purple-600); text-decoration: underline; text-underline-offset: 3px; }
+.hero-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 30px; }
+.pill {
+  font-size: 12px; padding: 5px 14px; border-radius: 100px;
+  border: 1px solid var(--purple-200); color: var(--purple-700);
+  background: var(--purple-50); font-weight: 600;
+}
+.hero-actions { display: flex; gap: 12px; margin-top: 28px; }
+.btn-primary {
+  font-size: 14px; padding: 10px 24px;
+  background: var(--purple-700); color: #fff;
+  border-radius: 4px; text-decoration: none;
+  font-weight: 600; transition: background .15s;
+}
+.btn-primary:hover { background: var(--purple-800); }
+.btn-secondary {
+  font-size: 14px; padding: 10px 24px;
+  border: 1.5px solid var(--purple-300); color: var(--purple-700);
+  border-radius: 4px; text-decoration: none;
+  font-weight: 600; transition: all .15s;
+  background: transparent;
+}
+.btn-secondary:hover { background: var(--purple-50); }
+
+/* ── DIVIDER ── */
+hr.div { border: none; border-top: 1px solid var(--rule); margin: 0 60px; }
+
+/* ── SECTIONS ── */
+.section { max-width: 980px; margin: 0 auto; padding: 68px 60px; }
+.section-label {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--purple-500); margin-bottom: 6px;
+}
+.section h2 {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.9rem; font-weight: 600; color: var(--ink);
+  letter-spacing: -0.02em; margin-bottom: 40px;
+}
+
+/* ── FOCUS GRID ── */
+.focus-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1px; background: var(--rule);
+  border: 1px solid var(--rule); border-radius: 8px; overflow: hidden;
+}
+.focus-item {
+  background: var(--white); padding: 30px 26px; transition: background .15s;
+}
+.focus-item:hover { background: var(--purple-50); }
+.focus-num {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 12px; color: var(--purple-300);
+  margin-bottom: 14px; display: block; font-style: italic;
+}
+.focus-item h3 {
+  font-size: 14.5px; font-weight: 600; color: var(--ink); margin-bottom: 8px;
+}
+.focus-item p { font-size: 13px; color: var(--gray-400); line-height: 1.8; }
+
+/* ── SKILLS ── */
+.skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 36px 64px; }
+.skill-group h3 {
+  font-size: 11.5px; font-weight: 700; color: var(--gray-400);
+  letter-spacing: 0.08em; text-transform: uppercase;
+  margin-bottom: 12px; padding-bottom: 10px;
+  border-bottom: 1px solid var(--rule);
+}
+.skill-tags { display: flex; flex-wrap: wrap; gap: 7px; }
+.skill-tag {
+  font-size: 13px; color: var(--gray-700);
+  border: 1px solid var(--gray-200); border-radius: 4px;
+  padding: 4px 13px; background: var(--gray-50);
+  transition: border-color .15s, color .15s, background .15s;
+}
+.skill-tag:hover { border-color: var(--purple-300); color: var(--purple-700); background: var(--purple-50); }
+
+/* ── PROJECTS ── */
+.projects-list {
+  display: flex; flex-direction: column; gap: 1px;
+  background: var(--rule); border: 1px solid var(--rule);
+  border-radius: 8px; overflow: hidden;
+}
+.project-row {
+  background: var(--white); padding: 32px 30px;
+  display: grid; grid-template-columns: 1fr auto;
+  gap: 2rem; align-items: start; transition: background .15s;
+}
+.project-row:hover { background: var(--purple-50); }
+.project-kicker {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--purple-500);
+  margin-bottom: 8px; display: block;
+}
+.project-row h3 {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 16px; font-weight: 600; color: var(--ink);
+  margin-bottom: 10px; line-height: 1.3;
+}
+.project-row p {
+  font-size: 14px; color: var(--gray-500);
+  line-height: 1.8; max-width: 560px;
+}
+.project-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+.p-tag {
+  font-size: 11.5px; color: var(--purple-600);
+  border: 1px solid var(--purple-200); border-radius: 3px;
+  padding: 2px 10px; background: var(--purple-50);
+}
+.proj-link {
+  font-size: 13px; color: var(--purple-600);
+  text-decoration: none; white-space: nowrap;
+  font-weight: 600; flex-shrink: 0; margin-top: 4px;
+  border: 1px solid var(--purple-200); border-radius: 4px;
+  padding: 7px 16px; transition: background .15s, color .15s;
+}
+.proj-link:hover { background: var(--purple-700); color: #fff; border-color: var(--purple-700); }
+
+/* ── CERTIFICATIONS ── */
+.certs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.cert-card {
+  border: 1px solid var(--rule); border-radius: 8px;
+  padding: 26px 24px; background: var(--off-white);
+  transition: border-color .15s, box-shadow .15s;
+}
+.cert-card:hover {
+  border-color: var(--purple-300);
+  box-shadow: 0 4px 16px rgba(109,40,217,.07);
+}
+.cert-issuer {
+  font-size: 11px; font-weight: 700; color: var(--purple-500);
+  letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 10px;
+}
+.cert-card h3 {
+  font-size: 14px; font-weight: 600; color: var(--ink);
+  line-height: 1.4; margin-bottom: 10px;
+}
+.cert-meta { font-size: 12px; color: var(--gray-400); }
+.cert-id { font-size: 11px; color: var(--gray-400); margin-top: 4px; font-family: 'Courier New', monospace; }
+
+/* ── RESEARCH CALLOUT ── */
+.research-box {
+  border: 1px solid var(--purple-200); border-radius: 8px;
+  padding: 36px 40px; background: var(--purple-50);
+  display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: center;
+}
+.research-box h3 {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.25rem; font-weight: 600; color: var(--ink);
+  margin-bottom: 12px; line-height: 1.3;
+}
+.research-box p { font-size: 14.5px; color: var(--gray-500); line-height: 1.85; }
+.research-areas { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 16px; }
+.r-tag {
+  font-size: 12px; color: var(--purple-700);
+  border: 1px solid var(--purple-300); border-radius: 100px;
+  padding: 3px 14px; background: var(--white); font-weight: 600;
+}
+.research-cta {
+  font-size: 14px; padding: 12px 28px;
+  background: var(--purple-700); color: #fff;
+  border-radius: 4px; text-decoration: none;
+  font-weight: 600; white-space: nowrap;
+  transition: background .15s;
+}
+.research-cta:hover { background: var(--purple-800); }
+
+/* ── EDUCATION ── */
+.edu-list { display: flex; flex-direction: column; gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 8px; overflow: hidden; }
+.edu-item { background: var(--white); padding: 30px 28px; display: grid; grid-template-columns: 100px 1fr; gap: 2rem; align-items: start; transition: background .15s; }
+.edu-item:hover { background: var(--purple-50); }
+.edu-year { font-size: 13px; color: var(--gray-400); font-weight: 600; padding-top: 3px; }
+.edu-detail h3 { font-family: 'Lora', Georgia, serif; font-size: 15px; font-weight: 600; color: var(--ink); margin-bottom: 4px; }
+.edu-detail p { font-size: 14px; color: var(--gray-500); }
+.edu-badge {
+  display: inline-block; font-size: 11px; font-weight: 700;
+  color: var(--purple-600); background: var(--purple-50);
+  border: 1px solid var(--purple-200); border-radius: 100px;
+  padding: 2px 12px; margin-top: 8px; letter-spacing: 0.05em;
+}
+
+/* ── CONTACT ── */
+.contact-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.contact-card {
+  border: 1px solid var(--rule); border-radius: 8px;
+  padding: 24px 24px; background: var(--off-white);
+  display: flex; align-items: center; gap: 18px;
+  text-decoration: none; transition: border-color .15s, box-shadow .15s;
+}
+.contact-card:hover {
+  border-color: var(--purple-300);
+  box-shadow: 0 4px 16px rgba(109,40,217,.07);
+}
+.contact-icon {
+  width: 42px; height: 42px; border-radius: 8px;
+  background: var(--purple-100); display: flex;
+  align-items: center; justify-content: center; flex-shrink: 0;
+}
+.contact-icon svg { width: 18px; height: 18px; stroke: var(--purple-700); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.contact-label { font-size: 11px; font-weight: 700; color: var(--purple-500); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 3px; }
+.contact-value { font-size: 14px; color: var(--ink); font-weight: 500; }
+
+/* ── FOOTER ── */
+footer {
+  margin-top: 1px;
+  border-top: 1px solid var(--rule);
+  padding: 32px 60px;
+  display: flex; align-items: center; justify-content: space-between;
+  background: var(--off-white);
+}
+.footer-name {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 15px; color: var(--ink); font-weight: 600;
+}
+.footer-links { display: flex; gap: 1.8rem; }
+.footer-links a {
+  font-size: 13px; color: var(--gray-400);
+  text-decoration: none; transition: color .15s;
+}
+.footer-links a:hover { color: var(--purple-600); }
+.footer-copy { font-size: 12.5px; color: var(--gray-400); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  nav { padding: 0 24px; }
+  .nav-links { display: none; }
+  .hero { grid-template-columns: 1fr; padding: 48px 24px; gap: 32px; }
+  .avatar-box { width: 140px; height: 170px; }
+  .section { padding: 48px 24px; }
+  hr.div { margin: 0 24px; }
+  .focus-grid { grid-template-columns: 1fr; }
+  .skills-grid { grid-template-columns: 1fr; }
+  .certs-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .research-box { grid-template-columns: 1fr; }
+  .project-row { grid-template-columns: 1fr; }
+  footer { flex-direction: column; gap: 16px; padding: 24px; text-align: center; }
+  .footer-links { flex-wrap: wrap; justify-content: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">Humera Noor</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#focus">Focus</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#certifications">Certifications</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a class="nav-cta" href="mailto:engr.humeranoor@gmail.com">Get in Touch</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero" id="about">
+  <div class="avatar-col">
+    <div class="avatar-box">
+      <div class="avatar-initials">HN</div>
+      <div class="avatar-tag">AI / ML</div>
+    </div>
+    <div class="social-links">
+      <a class="slink" href="mailto:engr.humeranoor@gmail.com">
+        <span class="sdot"></span> engr.humeranoor@gmail.com
+      </a>
+      <a class="slink" href="https://www.linkedin.com/in/humera-noor/" target="_blank">
+        <span class="sdot"></span> linkedin.com/in/humera-noor
+      </a>
+      <a class="slink" href="https://github.com/aiengr-humera" target="_blank">
+        <span class="sdot"></span> github.com/aiengr-humera
+      </a>
+      <a class="slink" href="https://aiengr-humera.github.io/hnairesearcher/" target="_blank">
+        <span class="sdot"></span> HNAI.Researcher Platform
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-body">
+    <div class="eyebrow">AI / ML Engineer</div>
+    <h1>Building <em>intelligent</em><br>systems that matter.</h1>
+    <p class="hero-bio">
+      I'm an AI/ML Engineer with an MCS from Virtual University of Pakistan, specializing in Machine Learning, Deep Learning, Computer Vision, Natural Language Processing, and AI Agents.
+    </p>
+    <p class="hero-bio">
+      I build intelligent automation pipelines using n8n, deploy AI-powered systems, and create open educational platforms for students in Pakistan and beyond. Currently seeking fully-funded MS and PhD scholarship opportunities in AI at leading international universities.
+    </p>
+    <div class="hero-pills">
+      <span class="pill">Machine Learning</span>
+      <span class="pill">Deep Learning</span>
+      <span class="pill">NLP</span>
+      <span class="pill">Computer Vision</span>
+      <span class="pill">AI Agents</span>
+      <span class="pill">n8n Automation</span>
+    </div>
+    <div class="hero-actions">
+      <a class="btn-primary" href="mailto:engr.humeranoor@gmail.com">Contact Me</a>
+      <a class="btn-secondary" href="https://aiengr-humera.github.io/hnairesearcher/" target="_blank">View Platform →</a>
+    </div>
+  </div>
+</div>
+
+<hr class="div">
+
+<!-- FOCUS -->
+<div class="section" id="focus">
+  <div class="section-label">Expertise</div>
+  <h2>Focus Areas</h2>
+  <div class="focus-grid">
+    <div class="focus-item">
+      <span class="focus-num">01</span>
+      <h3>Machine Learning & Deep Learning</h3>
+      <p>Building predictive models and neural network architectures for real-world applications using TensorFlow, PyTorch, and Keras.</p>
+    </div>
+    <div class="focus-item">
+      <span class="focus-num">02</span>
+      <h3>Natural Language Processing</h3>
+      <p>Working with LLMs, text classification, and NLP pipelines using NLTK and modern transformer-based approaches.</p>
+    </div>
+    <div class="focus-item">
+      <span class="focus-num">03</span>
+      <h3>Computer Vision</h3>
+      <p>Image recognition, object detection, and visual intelligence systems for automated decision-making.</p>
+    </div>
+    <div class="focus-item">
+      <span class="focus-num">04</span>
+      <h3>AI Agents</h3>
+      <p>Designing autonomous agents that reason, plan, and act — from WhatsApp bots to complex multi-step AI workflows.</p>
+    </div>
+    <div class="focus-item">
+      <span class="focus-num">05</span>
+      <h3>Workflow Automation (n8n)</h3>
+      <p>Connecting AI models, APIs, and services to build end-to-end intelligent automation pipelines using n8n and Docker.</p>
+    </div>
+    <div class="focus-item">
+      <span class="focus-num">06</span>
+      <h3>AI Education & Research</h3>
+      <p>Creating free, structured AI/ML learning resources for students in Pakistan and developing countries through the HNAI platform.</p>
+    </div>
+  </div>
+</div>
+
+<hr class="div">
+
+<!-- SKILLS -->
+<div class="section" id="skills">
+  <div class="section-label">Technical</div>
+  <h2>Skills</h2>
+  <div class="skills-grid">
+    <div class="skill-group">
+      <h3>Programming Languages</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">Java</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <h3>ML / DL Frameworks</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">TensorFlow</span>
+        <span class="skill-tag">PyTorch</span>
+        <span class="skill-tag">Keras</span>
+        <span class="skill-tag">Scikit-learn</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <h3>Data & NLP</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">Pandas</span>
+        <span class="skill-tag">NumPy</span>
+        <span class="skill-tag">NLTK</span>
+        <span class="skill-tag">Matplotlib</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <h3>Tools & Platforms</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">n8n</span>
+        <span class="skill-tag">Groq</span>
+        <span class="skill-tag">Docker</span>
+        <span class="skill-tag">GitHub</span>
+        <span class="skill-tag">Jupyter</span>
+        <span class="skill-tag">VS Code</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="div">
+
+<!-- PROJECTS -->
+<div class="section" id="projects">
+  <div class="section-label">Work</div>
+  <h2>Projects</h2>
+  <div class="projects-list">
+
+    <div class="project-row">
+      <div>
+        <span class="project-kicker">Live AI Platform</span>
+        <h3>Python for Everyone — AI-Powered Python Learning Platform</h3>
+        <p>A fully deployed AI-powered Python learning platform combining Google's Crash Course on Python, Python for Everybody, and Andrew Ng's AI Python curriculum. Features 11 structured modules, a 24/7 AI Chat Tutor, 50+ runnable code examples, YouTube content automation, student progress tracking, bookmarking system, and an admin dashboard. Built with React, Node.js, and MySQL — deployed live on Manus.</p>
+        <div class="project-tags">
+          <span class="p-tag">React</span>
+          <span class="p-tag">Node.js</span>
+          <span class="p-tag">MySQL</span>
+          <span class="p-tag">AI Chat</span>
+          <span class="p-tag">YouTube API</span>
+          <span class="p-tag">n8n</span>
+          <span class="p-tag">Live 🟢</span>
+        </div>
+      </div>
+      <a class="proj-link" href="https://n8nyoutube-86f6uahs.manus.space" target="_blank">View Live →</a>
+    </div>
+
+    <div class="project-row">
+      <div>
+        <span class="project-kicker">Education Platform</span>
+        <h3>HNAI.Researcher — Free AI/ML Education Platform</h3>
+        <p>An open-source AI & ML education platform built for students in Pakistan and beyond. Covers 6 structured learning tracks — Python for AI, Machine Learning, Deep Learning, NLP & LLMs, Computer Vision, and MLOps & Deployment — with 24+ lessons, hands-on projects, and a Research Archive. Completely free, no paywalls.</p>
+        <div class="project-tags">
+          <span class="p-tag">GitHub Pages</span>
+          <span class="p-tag">HTML / CSS / JS</span>
+          <span class="p-tag">Open Source</span>
+          <span class="p-tag">AI Education</span>
+          <span class="p-tag">Pakistan 🇵🇰</span>
+        </div>
+      </div>
+      <a class="proj-link" href="https://aiengr-humera.github.io/hnairesearcher/" target="_blank">View Live →</a>
+    </div>
+
+    <div class="project-row">
+      <div>
+        <span class="project-kicker">AI Automation</span>
+        <h3>n8n AI Automation Pipelines</h3>
+        <p>Built a suite of intelligent automation workflows using n8n and Groq (LLaMA models) — including a Daily Vocabulary Builder that posts AI/ML academic terminology to Facebook, LinkedIn, and Gmail three times daily; social media scheduling pipelines; and a YouTube lecture-to-study-notes converter via Google Docs. Runs on Docker with NocoDB, PostgreSQL, and Qdrant.</p>
+        <div class="project-tags">
+          <span class="p-tag">n8n</span>
+          <span class="p-tag">Groq / LLaMA</span>
+          <span class="p-tag">Docker</span>
+          <span class="p-tag">Facebook Graph API</span>
+          <span class="p-tag">LinkedIn API</span>
+          <span class="p-tag">PostgreSQL</span>
+        </div>
+      </div>
+      <a class="proj-link" href="https://github.com/aiengr-humera" target="_blank">GitHub →</a>
+    </div>
+
+    <div class="project-row">
+      <div>
+        <span class="project-kicker">AI Agent</span>
+        <h3>OpenClaw WhatsApp AI Agent</h3>
+        <p>Deployed a local WhatsApp AI agent (OpenClaw v2026.4.1) powered by Groq's Llama 3.3 70B model. Built with Node.js and run locally on Windows, with full project backed up to GitHub. Evaluated and chose local deployment over Oracle Cloud and Railway.app for reliability and control.</p>
+        <div class="project-tags">
+          <span class="p-tag">Node.js</span>
+          <span class="p-tag">Groq / Llama 3.3 70B</span>
+          <span class="p-tag">WhatsApp</span>
+          <span class="p-tag">AI Agent</span>
+          <span class="p-tag">Local Deployment</span>
+        </div>
+      </div>
+      <a class="proj-link" href="https://github.com/aiengr-humera" target="_blank">GitHub →</a>
+    </div>
+
+    <div class="project-row">
+      <div>
+        <span class="project-kicker">Web</span>
+        <h3>Personal Portfolio Website</h3>
+        <p>Designed and deployed a personal portfolio website showcasing projects, technical skills, and academic background. Hosted on GitHub Pages with a clean, professional layout.</p>
+        <div class="project-tags">
+          <span class="p-tag">GitHub Pages</span>
+          <span class="p-tag">HTML / CSS</span>
+          <span class="p-tag">Web Design</span>
+        </div>
+      </div>
+      <a class="proj-link" href="https://github.com/aiengr-humera" target="_blank">GitHub →</a>
+    </div>
+
+  </div>
+</div>
+
+<hr class="div">
+
+<!-- CERTIFICATIONS -->
+<div class="section" id="certifications">
+  <div class="section-label">Credentials</div>
+  <h2>Certifications</h2>
+  <div class="certs-grid">
+
+    <div class="cert-card">
+      <div class="cert-issuer">Google · Coursera</div>
+      <h3>Google IT Automation with Python Specialization</h3>
+      <div class="cert-meta">Issued March 2026</div>
+      <div class="cert-id">ID: GNA8FH7O2SO3</div>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-issuer">Google · Coursera</div>
+      <h3>Google Prompting Essentials Specialization</h3>
+      <div class="cert-meta">Issued December 2025</div>
+      <div class="cert-id">ID: 3DYAUO7J358L</div>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-issuer">Google · Coursera</div>
+      <h3>Google AI Essentials</h3>
+      <div class="cert-meta">Issued 2025</div>
+    </div>
+
+  </div>
+</div>
+
+<hr class="div">
+
+<!-- EDUCATION -->
+<div class="section" id="education">
+  <div class="section-label">Academic Background</div>
+  <h2>Education</h2>
+  <div class="edu-list">
+    <div class="edu-item">
+      <div class="edu-year">MCS</div>
+      <div class="edu-detail">
+        <h3>Master of Computer Science</h3>
+        <p>Virtual University of Pakistan · Completed 2014</p>
+      </div>
+    </div>
+    <div class="edu-item">
+      <div class="edu-year">Seeking</div>
+      <div class="edu-detail">
+        <h3>MS / PhD in Artificial Intelligence</h3>
+        <p>Fully-Funded International Scholarship · 2025 onwards</p>
+        <span class="edu-badge">Open to Applications</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="div">
+
+<!-- RESEARCH -->
+<div class="section" id="research">
+  <div class="section-label">Research Goals</div>
+  <h2>Scholarship & Research</h2>
+  <div class="research-box">
+    <div>
+      <h3>Seeking Fully-Funded MS & PhD Opportunities in AI</h3>
+      <p>Actively seeking scholarship opportunities at leading international universities. Open to research mentorships, academic collaborations, and partnerships in the areas of AI, Deep Learning, and NLP.</p>
+      <div class="research-areas">
+        <span class="r-tag">Deep Learning</span>
+        <span class="r-tag">AI Agents</span>
+        <span class="r-tag">Computer Vision</span>
+        <span class="r-tag">NLP & LLMs</span>
+        <span class="r-tag">MLOps</span>
+      </div>
+    </div>
+    <a class="research-cta" href="mailto:engr.humeranoor@gmail.com">Reach Out →</a>
+  </div>
+</div>
+
+<hr class="div">
+
+<!-- CONTACT -->
+<div class="section" id="contact">
+  <div class="section-label">Say Hello</div>
+  <h2>Contact</h2>
+  <div class="contact-grid">
+    <a class="contact-card" href="mailto:engr.humeranoor@gmail.com">
+      <div class="contact-icon">
+        <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+      </div>
+      <div>
+        <div class="contact-label">Email</div>
+        <div class="contact-value">engr.humeranoor@gmail.com</div>
+      </div>
+    </a>
+    <a class="contact-card" href="https://www.linkedin.com/in/humera-noor/" target="_blank">
+      <div class="contact-icon">
+        <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      </div>
+      <div>
+        <div class="contact-label">LinkedIn</div>
+        <div class="contact-value">linkedin.com/in/humera-noor</div>
+      </div>
+    </a>
+    <a class="contact-card" href="https://github.com/aiengr-humera" target="_blank">
+      <div class="contact-icon">
+        <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+      </div>
+      <div>
+        <div class="contact-label">GitHub</div>
+        <div class="contact-value">github.com/aiengr-humera</div>
+      </div>
+    </a>
+    <a class="contact-card" href="https://aiengr-humera.github.io/hnairesearcher/" target="_blank">
+      <div class="contact-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      </div>
+      <div>
+        <div class="contact-label">Platform</div>
+        <div class="contact-value">HNAI.Researcher</div>
+      </div>
+    </a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-name">Humera Noor</span>
+  <div class="footer-links">
+    <a href="#about">About</a>
+    <a href="#focus">Focus</a>
+    <a href="#projects">Projects</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <span class="footer-copy">© 2026 Humera Noor</span>
+</footer>
+
+</body>
+</html>
